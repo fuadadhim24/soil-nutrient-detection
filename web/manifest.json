@@ -1,6 +1,6 @@
 {
-    "name": "soil_nutrient_detectio",
-    "short_name": "soil_nutrient_detectio",
+    "name": "soil_nutrient_detection",
+    "short_name": "soil_nutrient_detection",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

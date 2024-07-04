@@ -1,4 +1,4 @@
-# soil_nutrient_detectio
+# soil_nutrient_detection
 
 A new Flutter project.
 

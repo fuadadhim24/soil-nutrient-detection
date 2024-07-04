@@ -1,10 +1,10 @@
 # Project-level configuration.
 cmake_minimum_required(VERSION 3.14)
-project(soil_nutrient_detectio LANGUAGES CXX)
+project(soil_nutrient_detection LANGUAGES CXX)
 
 # The name of the executable created for the application. Change this to change
 # the on-disk name of your application.
-set(BINARY_NAME "soil_nutrient_detectio")
+set(BINARY_NAME "soil_nutrient_detection")
 
 # Explicitly opt in to modern CMake behaviors to avoid warnings with recent
 # versions of CMake.

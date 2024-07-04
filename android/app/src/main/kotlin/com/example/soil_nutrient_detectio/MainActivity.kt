@@ -1,4 +1,4 @@
-package com.example.soil_nutrient_detectio
+package com.example.soil_nutrient_detection
 
 import io.flutter.embedding.android.FlutterActivity
 
