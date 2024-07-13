@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
               left: 0,
               right: 0,
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 44),
+                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 55),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
