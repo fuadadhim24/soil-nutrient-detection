@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:soil_nutrient_detection/shared/theme.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,7 +15,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Container(
         width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height +100,
+        height: MediaQuery.of(context).size.height + 100,
         child: Stack(
           children: [
             Positioned.fill(
@@ -41,10 +42,27 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     topProfile(),
-                    SizedBox(height: 50),
+                    SizedBox(height: 40),
                     searchContainer(),
-                    SizedBox(height: 10),
+                    SizedBox(height: 24),
                     sawahContent(),
+                    SizedBox(height: 24),
+                    GestureDetector(
+                      child: Container(
+                        padding: EdgeInsets.symmetric(vertical: 15),
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: greenColor),
+                        child: Center(
+                          child: Text(
+                            'Tambah Lahan',
+                            style: whiteTS.copyWith(
+                                fontSize: 14, fontWeight: bold),
+                          ),
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -62,13 +80,18 @@ class _HomePageState extends State<HomePage> {
         Container(
           child: Row(
             children: [
-              Container(
+              // Container(
+              //   width: 44,
+              //   height: 44,
+              //   decoration: BoxDecoration(
+              //     shape: BoxShape.circle,
+              //     color: whiteColor,
+              //   ),
+              // ),
+              Image.asset(
+                'assets/img/avatar1.png',
                 width: 44,
                 height: 44,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: whiteColor,
-                ),
               ),
               SizedBox(
                 width: 14,
@@ -136,88 +159,93 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget lahanCard() {
-    return Container(
-      margin: EdgeInsets.only(bottom: 22),
-      width: 340,
-      height: 147,
-      padding: EdgeInsets.symmetric(horizontal: 22),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(13),
-        color: whiteColor,
-        border: Border.all(width: 1, color: greyColor),
-        boxShadow: [
-          BoxShadow(
-            color: blackTransparentColor,
-            offset: Offset(0, 4),
-            blurRadius: 4,
-            spreadRadius: 0,
-          ),
-        ],
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          SizedBox(
-            height: 10,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                children: [
-                  Text(
-                    'Sawah A',
-                    style: blackTS.copyWith(fontSize: 22),
-                  ),
-                  SizedBox(
-                    height: 11,
-                  ),
-                  Text(
-                    'Luas 30x24 m2',
-                    style: blackTS.copyWith(fontSize: 12),
-                  ),
-                ],
-              ),
-              Container(
-                width: 128,
-                height: 38,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(13),
-                  border: Border.all(color: greyColor, width: 1),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return GestureDetector(
+      onTap: () {
+        Get.toNamed('detail');
+      },
+      child: Container(
+        margin: EdgeInsets.only(bottom: 22),
+        width: 340,
+        height: 147,
+        padding: EdgeInsets.symmetric(horizontal: 22),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(13),
+          color: whiteColor,
+          border: Border.all(width: 1, color: greyColor),
+          boxShadow: [
+            BoxShadow(
+              color: blackTransparentColor,
+              offset: Offset(0, 4),
+              blurRadius: 4,
+              spreadRadius: 0,
+            ),
+          ],
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
                   children: [
-                    Container(
-                      width: 27,
-                      height: 24,
-                      decoration: BoxDecoration(
-                        color: greenTransparentColor,
-                        borderRadius: BorderRadius.circular(7),
-                      ),
-                      child: Center(
-                        child: Icon(
-                          Icons.location_on_outlined,
-                          size: 16,
-                          color: greenColor,
-                        ),
-                      ),
+                    Text(
+                      'Sawah A',
+                      style: blackTS.copyWith(fontSize: 22),
+                    ),
+                    SizedBox(
+                      height: 11,
                     ),
                     Text(
-                      'Lihat lokasi',
-                      style: blackTS.copyWith(fontSize: 11),
+                      'Luas 30x24 m2',
+                      style: blackTS.copyWith(fontSize: 12),
                     ),
                   ],
                 ),
-              )
-            ],
-          ),
-          Text(
-            'Hi Jenifer',
-            style: blackTS.copyWith(fontSize: 12),
-          ),
-        ],
+                Container(
+                  width: 128,
+                  height: 38,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(13),
+                    border: Border.all(color: greyColor, width: 1),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        width: 27,
+                        height: 24,
+                        decoration: BoxDecoration(
+                          color: greenTransparentColor,
+                          borderRadius: BorderRadius.circular(7),
+                        ),
+                        child: Center(
+                          child: Icon(
+                            Icons.location_on_outlined,
+                            size: 16,
+                            color: greenColor,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        'Lihat lokasi',
+                        style: blackTS.copyWith(fontSize: 11),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+            Text(
+              'Hi Jenifer',
+              style: blackTS.copyWith(fontSize: 12),
+            ),
+          ],
+        ),
       ),
     );
   }

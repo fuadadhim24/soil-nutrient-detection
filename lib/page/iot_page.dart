@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:soil_nutrient_detection/data/iot.dart';
+import 'package:soil_nutrient_detection/data/dummy.dart';
 import 'package:soil_nutrient_detection/shared/theme.dart';
 
 class IotPage extends StatefulWidget {
@@ -10,7 +10,7 @@ class IotPage extends StatefulWidget {
 }
 
 class _IotPageState extends State<IotPage> {
-  var iots = Iot.listIot;
+  var iots = listIot;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
