@@ -9,7 +9,9 @@ Color whiteColor = const Color(0xffFFFFFF);
 Color redColor = const Color(0xffFF5B5B);
 Color redTransparentColor = const Color(0xffFF5B5B).withOpacity(0.15);
 Color greyColor = const Color(0xffD9D9D9);
+Color grey2Color = const Color(0xffA2A2A2);
 Color blackToGreyColor = const Color(0xff464255);
+Color yellowColor = const Color(0xffFADA3D);
 
 TextStyle blackTS = GoogleFonts.inter(
   color: blackColor,
@@ -25,6 +27,9 @@ TextStyle redTS = GoogleFonts.inter(
 );
 TextStyle blackToGreyTS = GoogleFonts.inter(
   color: blackToGreyColor,
+);
+TextStyle greyTS = GoogleFonts.inter(
+  color: grey2Color,
 );
 
 FontWeight medium = FontWeight.w500;

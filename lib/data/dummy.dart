@@ -6,3 +6,10 @@ final List<Map<String, dynamic>> listIot = [
   {'name': 'ESP32 Devkit V1', 'count': '1', 'active': 1},
   {'name': 'Modul Charger 5v Type C', 'count': '1', 'active': 1}
 ];
+
+final List<String> sensorTitles = [
+  'Grafik Suhu',
+  'Grafik Kelembapan',
+  'Grafik Cahaya',
+  'Grafik Nutrisi',
+];

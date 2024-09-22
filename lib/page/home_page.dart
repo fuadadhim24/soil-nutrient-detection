@@ -13,6 +13,43 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: Drawer(surfaceTintColor: whiteColor,
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              child: Text(
+                'Menu',
+                style: whiteTS.copyWith(fontWeight: bold),
+              ),
+              decoration: BoxDecoration(
+                color: greenColor,
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.lock),
+              title: Text('Ganti Password'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.help),
+              title: Text('Bantuan dan Dukungan'),
+              onTap: () {
+                Navigator.pop(context); 
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.exit_to_app),
+              title: Text('Keluar'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      ),
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height + 100,
@@ -41,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    topProfile(),
+                    topProfile(context),
                     SizedBox(height: 40),
                     searchContainer(),
                     SizedBox(height: 24),
@@ -73,50 +110,46 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget topProfile() {
+  Widget topProfile(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Container(
-          child: Row(
-            children: [
-              // Container(
-              //   width: 44,
-              //   height: 44,
-              //   decoration: BoxDecoration(
-              //     shape: BoxShape.circle,
-              //     color: whiteColor,
-              //   ),
-              // ),
-              Image.asset(
-                'assets/img/avatar1.png',
-                width: 44,
-                height: 44,
-              ),
-              SizedBox(
-                width: 14,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Hi Jenifer',
-                    style: whiteTS.copyWith(fontSize: 15, fontWeight: bold),
-                  ),
-                  Text(
-                    'Admin',
-                    style: whiteTS.copyWith(
-                      fontSize: 12,
-                    ),
-                  ),
-                ],
-              )
-            ],
-          ),
+        Row(
+          children: [
+            Image.asset(
+              'assets/img/avatar1.png',
+              width: 44,
+              height: 44,
+            ),
+            SizedBox(width: 14),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Hi Jenifer',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold), // Ganti whiteTS
+                ),
+                Text(
+                  'Admin',
+                  style: TextStyle(
+                      color: Colors.white, fontSize: 12), // Ganti whiteTS
+                ),
+              ],
+            )
+          ],
         ),
-        Icon(
-          Icons.notifications_none_rounded,
-          color: whiteColor,
+        Builder(
+          builder: (BuildContext innerContext) {
+            return IconButton(
+              onPressed: () {
+                Scaffold.of(innerContext).openEndDrawer();
+              },
+              icon: Icon(Icons.menu, color: Colors.white),
+            );
+          },
         ),
       ],
     );
