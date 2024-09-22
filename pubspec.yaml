@@ -38,6 +38,7 @@ dependencies:
   get: ^4.6.6
   google_fonts: ^6.2.1
   awesome_bottom_bar: ^1.2.4
+  syncfusion_flutter_gauges: ^27.1.48
 
 dev_dependencies:
   flutter_test:

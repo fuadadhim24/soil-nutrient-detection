@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:soil_nutrient_detection/data/dummy.dart';
 import 'package:soil_nutrient_detection/shared/theme.dart';
+import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({super.key});
@@ -181,6 +182,51 @@ class _DetailPageState extends State<DetailPage> {
                     sensorTitles[index],
                     style:
                         blackToGreyTS.copyWith(fontSize: 16, fontWeight: bold),
+                  ),
+                  Expanded(
+                    child: Container(
+                      child: SfRadialGauge(
+                        enableLoadingAnimation: true,
+                        axes: <RadialAxis>[
+                          RadialAxis(
+                            minimum: 0,
+                            maximum: 150,
+                            ranges: <GaugeRange>[
+                              GaugeRange(
+                                  startValue: 0,
+                                  endValue: 50,
+                                  color: Colors.green,
+                                  startWidth: 10,
+                                  endWidth: 10),
+                              GaugeRange(
+                                  startValue: 50,
+                                  endValue: 100,
+                                  color: Colors.orange,
+                                  startWidth: 10,
+                                  endWidth: 10),
+                              GaugeRange(
+                                  startValue: 100,
+                                  endValue: 150,
+                                  color: Colors.red,
+                                  startWidth: 10,
+                                  endWidth: 10)
+                            ],
+                            pointers: <GaugePointer>[NeedlePointer(value: 90)],
+                            annotations: <GaugeAnnotation>[
+                              GaugeAnnotation(
+                                  widget: Container(
+                                      child: const Text('90',
+                                          style: TextStyle(
+                                              fontSize: 25,
+                                              fontWeight: FontWeight.bold))),
+                                  angle: 90,
+                                  positionFactor: 0.5)
+                            ],
+                            canScaleToFit: true,
+                          )
+                        ],
+                      ),
+                    ),
                   ),
                 ],
               ),
